@@ -22,7 +22,7 @@ It is in the play() method of simulation units that the state transition logic a
 Here the class diagram of the framework :
 ![diagram_eds](https://github.com/user-attachments/assets/7a408101-2580-4e1b-8984-a604dbc28364)
 
-## Example : the office
+## Example 1 : office with one employee
 We consider a queue in front of an office with only one employee to provide the service.
 The office is open 8 hours a day.
 The queue is FIFO-like, and the service time at the office follows a normal distribution with a mean of 4 minutes and a standard deviation of 1 minute. 
@@ -31,3 +31,11 @@ Every user in the queue is served, even after closing. All times are expressed i
 
 This system is described in the class **SimpleOffice** (package eds.examples.simpleoffice, file **SimpleOffice.java**).
 SimpleOffice also contains the main function, from where the simulation is built and launched. 
+
+## Example 2 : office with several employees
+We consider a queue in front of an office with *nres* employees to provide the service, where *nres*>0. Each employee (called a resource in this kind of simulation) can serve one user. Employees therefore work in parallel.
+
+Like in example 1, the office is open 8 hours a day. The queue is FIFO-like, and the service time at the office follows a normal distribution with a mean of 6 minutes and a standard deviation of 1 minute. Users have an inter-arrival time of uniform distribution between 2 and 4 minutes. Every user in the queue is served, even after closing. All times are expressed in seconds.
+
+This system is described in the class **SimpleOffice2** (package eds.examples.simpleoffice2, file **SimpleOffice2.java**).
+SimpleOffice2 also contains the main function, from where the simulation is built and launched.
