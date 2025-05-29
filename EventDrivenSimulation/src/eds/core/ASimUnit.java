@@ -17,6 +17,7 @@ public abstract class ASimUnit {
 	public String name=null; // the unit's name
     public byte priority=0;  // priority (in case of event time collision)
     protected EventSchedule schedule=null; // associated scheduler 
+    protected EDSimulator simulator=null; // parent simulator
  
     // Associate the scheduler to this object
     public void linkToSchedule(EventSchedule schedule) {

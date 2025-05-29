@@ -40,7 +40,9 @@ public final class EDSimulator implements Runnable {
 
 	// Variables to set the time window to simulate
 	private double beginTime=0; // initial time
-	private double endTime=1; // final time
+	private double endTime; // final time
+	private double lastEventTime; // time of the last event (that can greater than endTime)
+	
 	private boolean stopForEndTime=false; // stop option: True -> force stop when schedule.time>=endTime, False otherwise 
 	
 	// Number of runs to be performed (number of system simulations)
@@ -91,6 +93,7 @@ public final class EDSimulator implements Runnable {
 			if(state==RUNNING_STATE) {
 				runsCount++;
 				threshold=step;
+				lastEventTime=schedule.getTime();
 				fireSimulationRunEnded("Simulation Run #"+Integer.toString(runsCount)+" finished");
 				schedule.reset();
 				for(ASimUnit unit:simUnits) {
@@ -199,7 +202,14 @@ public final class EDSimulator implements Runnable {
 	}
 
 	/**
-	 * @return the duration
+	 * @return the lastEventTime
+	 */
+	public final double getLastEventTime() {
+		return lastEventTime;
+	}
+
+	/**
+	 * @return the real duration of the simulation in ms.
 	 */
 	public double getDuration() {
 		return duration;
@@ -207,6 +217,7 @@ public final class EDSimulator implements Runnable {
 	
 	public void addSimUnit(ASimUnit unit) {
 		simUnits.add(unit);
+		unit.simulator=this;
 		unit.linkToSchedule(schedule);
 	}
 	
