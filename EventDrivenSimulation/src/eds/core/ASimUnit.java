@@ -29,11 +29,16 @@ public abstract class ASimUnit {
        return schedule.getTime();
     }
     
-    // Add an event to the scheduler
+    // Add an event to the scheduler for the current ASimUnit object
     public void addEvent(double step,String action) {
     	schedule.addEvent(step,this, action);
     }
- 
+
+    // Add an event to the scheduler for an other ASimUnit object
+    public void addEvent(double step,ASimUnit unit, String action) {
+    	schedule.addEvent(step,unit, action);
+    }
+
    // Interface of the response to an action method 
     abstract public boolean play(String action);
  
