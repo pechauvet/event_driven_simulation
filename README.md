@@ -39,3 +39,16 @@ Like in example 1, the office is open 8 hours a day. The queue is FIFO-like, and
 
 This system is described in the class **SimpleOffice2** (package eds.examples.simpleoffice2, file **SimpleOffice2.java**).
 SimpleOffice2 also contains the main function, from where the simulation is built and launched.
+
+## Example 3 : a medical analysis laboratory
+In this example, the simulation is composed of two ASimUnit units (one for admission, the other for the examination) and the main program.
+
+Consider a medical analysis laboratory, open for 8 hours a day. 
+All users must first present their prescription to a medical secretary, they are then referred to a nurse who will perform the examination such as a blood test. Users have an inter-arrival time of uniform distribution between 2 and 5 minutes. The queue in front of the secretary is FIFO-like, and the secretary service time follows a normal distribution with a mean of 4 minutes and a standard deviation of 1 minute.
+The laboratory employs nb_nurse nurses who each have a room to accommodate a user and carry out the examination. 
+Any user already waiting is served, even if the laboratory closes. All times are expressed in seconds.
+
+This system is described with three classes :
+- **Admission** (package eds.examples.admission, file **Admission.java**) : the admission (one medical secretary) part of the system.
+- **Examination** (package eds.examples.admission, file **Examination.java**) : the examination (several nurses/technicians) part of the system.
+- **Main** (package eds.examples.admission, file **Main.java**) : the main function, from where the simulation is built and launched.
