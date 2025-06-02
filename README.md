@@ -28,6 +28,7 @@ The office is open 8 hours a day.
 The queue is FIFO-like, and the service time at the office follows a normal distribution with a mean of 4 minutes and a standard deviation of 1 minute. 
 Users have an inter-arrival time of uniform distribution between 2 and 5 minutes. 
 Every user in the queue is served, even after closing. All times are expressed in seconds.
+![Office_light](https://github.com/user-attachments/assets/9008f850-9fe4-4019-adbf-69ed4cf8da88)
 
 This system is described in the class **SimpleOffice** (package eds.examples.simpleoffice, file **SimpleOffice.java**).
 SimpleOffice also contains the main function, from where the simulation is built and launched. 
@@ -36,6 +37,7 @@ SimpleOffice also contains the main function, from where the simulation is built
 We consider a queue in front of an office with *nres* employees to provide the service, where *nres*>0. Each employee (called a resource in this kind of simulation) can serve one user. Employees therefore work in parallel.
 
 Like in example 1, the office is open 8 hours a day. The queue is FIFO-like, and the service time at the office follows a normal distribution with a mean of 6 minutes and a standard deviation of 1 minute. Users have an inter-arrival time of uniform distribution between 2 and 4 minutes. Every user in the queue is served, even after closing. All times are expressed in seconds.
+![Office2_light](https://github.com/user-attachments/assets/c57f5c87-2c0d-43b9-99a3-95c78ddef935)
 
 This system is described in the class **SimpleOffice2** (package eds.examples.simpleoffice2, file **SimpleOffice2.java**).
 SimpleOffice2 also contains the main function, from where the simulation is built and launched.
@@ -47,6 +49,7 @@ Consider a medical analysis laboratory, open for 8 hours a day.
 All users must first present their prescription to a medical secretary, they are then referred to a nurse who will perform the examination such as a blood test. Users have an inter-arrival time of uniform distribution between 2 and 5 minutes. The queue in front of the secretary is FIFO-like, and the secretary service time follows a normal distribution with a mean of 4 minutes and a standard deviation of 1 minute.
 The laboratory employs nb_nurse nurses who each have a room to accommodate a user and carry out the examination. 
 Any user already waiting is served, even if the laboratory closes. All times are expressed in seconds.
+![MedLab_light](https://github.com/user-attachments/assets/61601a0a-352e-4039-b958-c49ab04701a3)
 
 This system is described with three classes :
 - **Admission** (package eds.examples.admission, file **Admission.java**) : the admission (one medical secretary) part of the system.
